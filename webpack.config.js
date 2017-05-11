@@ -1,7 +1,8 @@
 const path = require('path'),
     webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+    BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
+    lost = require('lost');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -34,7 +35,8 @@ module.exports = {
     watch: true,
     output: {
         path: path.resolve(__dirname, 'dist/assets'),
-        filename: '[name].bundle.css',
-        sourceMapFilename: '[file].map'
+        filename: '[name].bundle.css'
+            /*,
+                    sourceMapFilename: '[file].map'*/
     }
 }
