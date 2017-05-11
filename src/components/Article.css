@@ -1,5 +1,6 @@
 .article {
     font-size: 14px;
+    border: 3px dashed red;
     & a {
         color: var(--color-blue);
     }
