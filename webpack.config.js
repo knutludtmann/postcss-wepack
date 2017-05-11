@@ -1,7 +1,8 @@
 const path = require('path'),
     webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+    BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
+    OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -18,9 +19,9 @@ module.exports = {
     ],
     watch: true,
     module: {
-        loaders: [{
+        rules: [{
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract({
+            use: ExtractTextPlugin.extract({
                 loader: 'css-loader?importLoaders=1!postcss-loader'
             }),
         }, ],
