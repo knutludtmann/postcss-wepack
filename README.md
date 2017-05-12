@@ -6,6 +6,9 @@
 + sourcemaps 
 + browsersync 
 + lost
++ stylelint https://github.com/JaKXz/stylelint-webpack-plugin 
++ .stylelintrc https://stylelint.io/user-guide/rules/
+
 
 # PostCSS + cssnext
 https://blog.madewithenvy.com/webpack-2-postcss-cssnext-fdcd2fd7d0bd

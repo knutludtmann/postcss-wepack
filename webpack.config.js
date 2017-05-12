@@ -2,7 +2,8 @@ const path = require('path'),
     webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
-    lost = require('lost');
+    lost = require('lost'),
+    StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -15,9 +16,14 @@ module.exports = {
             exclude: ['/node_modules/'],
             use: ExtractTextPlugin.extract({
                 /* fallbackLoader: 'style-loader', //importLoaders=1? */
-                loader: [
-                    { loader: 'css-loader', query: { sourceMap: true } },
-                    { loader: 'postcss-loader', query: { sourceMap: true } }
+                loader: [{
+                        loader: 'css-loader',
+                        query: { sourceMap: true }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        query: { sourceMap: true }
+                    }
                 ],
             }),
         }, ],
@@ -29,6 +35,14 @@ module.exports = {
             server: { baseDir: ['./'] }
         }),
         new ExtractTextPlugin('[name].bundle.css'),
+        new StyleLintPlugin({
+            configFile: '.stylelintrc',
+            context: 'src',
+            files: '**/*.css',
+            failOnError: false,
+            quiet: false,
+        })
+
     ],
 
     devtool: 'source-map',
