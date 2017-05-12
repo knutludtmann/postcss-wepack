@@ -1,10 +1,10 @@
 module.exports = {
     plugins: {
         'postcss-import': {},
-        'postcss-cssnext': {
-            browsers: ['last 2 versions', '> 5%'],
-        },
         'lost': {},
+        'postcss-cssnext': {
+            browsers: ['last 2 versions', '> 5%', 'Firefox > 20', 'Opera 12.1'],
+        },
         'cssnano': { discardComments: false }
     },
 };

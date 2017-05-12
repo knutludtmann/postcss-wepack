@@ -2,7 +2,7 @@
 # Frontend Setup 
 + webpack 2 
 + PostCSS 
-+ cssnext 
++ cssnext - autoprefixer:https://github.com/ai/browserslist#queries
 + sourcemaps 
 + browsersync 
 + lost
