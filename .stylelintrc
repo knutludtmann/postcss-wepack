@@ -1,5 +1,6 @@
 {
   "rules": {
-    "selector-no-id": true
+    "selector-no-id": true,
+    "block-closing-brace-empty-line-before": "never"
   }
 }

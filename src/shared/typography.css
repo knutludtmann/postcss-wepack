@@ -1,3 +1,10 @@
+/*
+Document fonts
+
+Text is  - FF DIN", sans-serif
+
+Styleguide 2.1.3.
+*/
 :root {
     --font-text: "FF DIN", sans-serif;
     --font-weight: 300;

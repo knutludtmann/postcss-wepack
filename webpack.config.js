@@ -3,7 +3,12 @@ const path = require('path'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
     lost = require('lost'),
-    StyleLintPlugin = require('stylelint-webpack-plugin');
+    StyleLintPlugin = require('stylelint-webpack-plugin'),
+    KssWebpackPlugin = require('kss-webpack-plugin');
+
+const KssConfig = {
+    source: path.resolve(__dirname, 'src')
+};
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -15,7 +20,6 @@ module.exports = {
             test: /\.css$/,
             exclude: ['/node_modules/'],
             use: ExtractTextPlugin.extract({
-                /* fallbackLoader: 'style-loader', //importLoaders=1? */
                 loader: [{
                         loader: 'css-loader',
                         query: { sourceMap: true }
@@ -41,7 +45,8 @@ module.exports = {
             files: '**/*.css',
             failOnError: false,
             quiet: false,
-        })
+        }),
+        new KssWebpackPlugin(KssConfig)
 
     ],
 
@@ -50,7 +55,5 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist/assets'),
         filename: '[name].bundle.css'
-            /*,
-                    sourceMapFilename: '[file].map'*/
     }
 }
