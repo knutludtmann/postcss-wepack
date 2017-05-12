@@ -17,5 +17,13 @@
 
 div {
      lost-column: 1/3;
+     background: green;
+     &:first-child {
+        lost-offset: 1/3;
+     }
 }
 
+section {
+    border: 1px solid blue;
+    lost-utility: clearfix;
+}
