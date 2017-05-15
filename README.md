@@ -8,7 +8,8 @@
 + lost
 + stylelint https://github.com/JaKXz/stylelint-webpack-plugin 
 + .stylelintrc https://stylelint.io/user-guide/rules/
-
++ CSS Grid Layout Polyfill https://github.com/FremyCompany/css-grid-polyfill
+ 
 ## Stylguide
 + kss for webpack https://www.npmjs.com/package/kss-webpack-plugin
 
