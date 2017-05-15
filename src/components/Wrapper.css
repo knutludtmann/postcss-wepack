@@ -37,7 +37,7 @@ section {
 }
 
 
-/*
+
 .container {
     height:100vh;
     display: grid;
@@ -69,6 +69,6 @@ footer {
     background:lightblue;
     grid-area: footer;
 }
-*/
+
 
 
