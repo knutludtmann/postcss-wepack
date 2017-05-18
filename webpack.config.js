@@ -29,9 +29,9 @@ module.exports = {
                     },
                     {
                         loader: 'postcss-loader',
-                        query: {
-                            sourceMap: true
-                        }
+                        /* query: {
+                             sourceMap: true
+                         }*/
                     }
                 ],
             }),
