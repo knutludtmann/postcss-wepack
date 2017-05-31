@@ -5,11 +5,9 @@ Grid: grid-template-areas:
 "content content content sidebar"
 "footer footer footer footer"
 
-## Polyfill test ok: 
-./index.html
-+ Win7: IE9, IE10, IE11, 
-+ Win7: Firefox 45.5.1, Firefox 50.0.1 
-+ Win7: Opera 18.0, Opera 43.0
+## Polyfill nook: 
+./index2.html
++ Win7: IE11
 
 
 ### Frontend Setup 
