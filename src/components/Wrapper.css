@@ -25,32 +25,31 @@ section {
 }
 
 
-
 .container {
     min-height: 100vh;
-    margin: 0 auto; 
-    display: grid;
-    grid-gap: 6px;
+    margin: 0 auto;    
+}
 
-    grid-template-rows: 100px 300px 1fr 200px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-        "header header header header"
-        "content content content content"
-        "sidebar sidebar sidebar sidebar"
-        "footer footer footer footer"
-    ; 
-    
+
+@supports ( (display: grid) ) {
+    :root {
+        --display: grid;
+    }
+    body {
+        background: #fff;
+    }
 }
 
 @media only screen and (min-device-width: 520px) and (min-width: 520px) {
     .container { 
-        grid-template-rows: 110px 1fr 250px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        display: var(--display);
+        grid-gap: 6px;
+        grid-template-rows: 110px 1fr 450px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-            "header header header header header header header"
-            "content content content content sidebar sidebar sidebar"
-            "footer footer footer footer sidebar sidebar sidebar"
+            "header header header header header header header header"
+            "content content content content sidebar sidebar sidebar sidebar"
+            "footer footer footer footer sidebar sidebar sidebar sidebar"
         ; 
     }
 }
@@ -61,9 +60,9 @@ section {
         grid-template-rows: 120px 1fr 250px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-            "header header header sidebar"
-            "content content content sidebar"
-            "footer footer footer footer"
+            "header header header sidebar "
+            "content content content sidebar "
+            "footer footer footer footer "
         ; 
     }
 }
@@ -72,14 +71,13 @@ section {
 header {
     background:#000;
     grid-area: header;
-    -js-display: flex;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
 }
 
-@media screen and (min-width: 550px){
+@media only screen and (min-device-width: 550px) and (min-width: 550px){
     header {
         flex-direction: row; 
         justify-content: space-between;
@@ -88,7 +86,6 @@ header {
 
 
 .nav {
-    -js-display: flex;
     display: flex;
     flex-grow: 0; 
     justify-content: space-around; 
@@ -96,7 +93,7 @@ header {
     width: 100%;
 } 
 
-@media (min-width: 550px){
+@media only screen and (min-device-width: 550px) and (min-width: 550px){
     .nav {
         flex-grow: 1; 
     }
@@ -118,20 +115,38 @@ h1 {
 .article--main {
     background:gold;
     grid-area: content;
-    -js-display: flex;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 600px;
+    flex-direction: column; 
+   
 }
 
-.article--aside{
+
+@supports not (min-height: 1px) {
+    .article--main {
+        border: 3px dashed green;
+        height: 250px;   
+    }
+}
+
+@supports ( (min-height: 1px) ) {
+    .article--main {
+        min-height: 250px;   
+    }
+}
+
+.article--aside {
+    flex-shrink: 1;
+}
+
+.article--aside,
+.footer-item {
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
-.article--aside:not(:last-child) {
-   
+.article--aside:not(:last-child)
+ {
     border-bottom: 1px dotted black;
 }
 
@@ -156,7 +171,7 @@ aside {
 
 .article__a {
     color: white; 
-    border: 1px solid white;
+    background: black;
     padding: .2em;
     font-size: .9em;
 }
@@ -165,21 +180,39 @@ footer {
     background: gold;
     grid-area: footer;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 12px;
 }
 
 .footer-item:not(:last-child) {
-    border-right: 1px dotted black;
+    border-bottom: 1px dotted black;
+}
+
+
+@media only screen and (min-device-width: 1000px) and (min-width: 1000px){
+    footer {
+         flex-direction: row;
+    }
+    .footer-item:not(:last-child) {
+        border-right: 1px dotted black;
+    }
 }
 
 
 .footer-item {
-    -js-display: flex;
     flex: 1;
-    padding-left: 12px;
 }
 
+@media only screen and (min-device-width: 1000px) and (min-width: 1000px){
+    .footer-item {
+        padding-left: 12px;
+    }
+    .footer-item:not(:last-child)
+    {
+        border-bottom: none;
+    }
+}
 
 .footer-headline {
     margin: 0;
