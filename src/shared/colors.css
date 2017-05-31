@@ -13,4 +13,5 @@ Styleguide 2.2.
 :root {
     --color-black: rgb(0, 0, 0);
     --color-blue: #32c7ff;
+    --color-white: rgba(255, 255, 255, .9);
 }

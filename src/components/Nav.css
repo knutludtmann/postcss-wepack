@@ -1,0 +1,28 @@
+/*
+A button suitable for giving stars to someone.
+
+:hover             - Subtle hover highlight.
+.stars-given       - A highlight indicating you've already given a star.
+.stars-given:hover - Subtle hover highlight on top of stars-given styling.
+.disabled          - Dims the button to indicate it cannot be used.
+
+Styleguide 2.1. 
+*/
+
+
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-meta {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navitem {
+  color: white;
+}

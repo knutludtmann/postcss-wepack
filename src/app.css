@@ -5,6 +5,8 @@
 /* Components */
 
 @import "components/Body.css";
-/*@import "components/Article.css";*/
+@import "components/Article.css";
 @import "components/Button.css";
 @import "components/Wrapper.css";
+@import "components/Nav.css";
+@import "components/Logo.css";
